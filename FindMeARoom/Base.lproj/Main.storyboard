@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0MM-f1-czT">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Room Finder-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Room Finder" id="BYZ-38-t0r" customClass="ViewController" customModule="FindMeARoom" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,132 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ad-sh-dXj">
+                                <rect key="frame" x="73" y="100" width="454" height="400"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4ad-sh-dXj" secondAttribute="height" multiplier="227:200" id="caD-mb-Om9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Find Me A Room!" backgroundImage="push_button.png">
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="-7.5" y="41" width="815" height="718"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="tgx-ya-eKa" kind="show" id="hso-EH-tde"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwY-ph-MuN">
+                                <rect key="frame" x="240" y="72" width="119" height="20"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5P3-WU-8PZ">
+                                        <rect key="frame" x="8" y="0.0" width="20" height="20"/>
+                                        <animations/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-M0-x9c">
+                                        <rect key="frame" x="36" y="0.0" width="75" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5P3-WU-8PZ" firstAttribute="centerY" secondItem="LwY-ph-MuN" secondAttribute="centerY" id="EOW-gS-z0r"/>
+                                    <constraint firstItem="tCJ-M0-x9c" firstAttribute="centerY" secondItem="5P3-WU-8PZ" secondAttribute="centerY" id="Jnv-0U-IxG"/>
+                                    <constraint firstItem="tCJ-M0-x9c" firstAttribute="leading" secondItem="5P3-WU-8PZ" secondAttribute="trailing" constant="8" id="Tyq-iN-G0t"/>
+                                    <constraint firstItem="5P3-WU-8PZ" firstAttribute="leading" secondItem="LwY-ph-MuN" secondAttribute="leading" constant="8" id="mIy-PB-EI6"/>
+                                    <constraint firstItem="5P3-WU-8PZ" firstAttribute="height" secondItem="LwY-ph-MuN" secondAttribute="height" id="xyp-Jj-8RR"/>
+                                    <constraint firstAttribute="trailing" secondItem="tCJ-M0-x9c" secondAttribute="trailing" constant="8" id="zeP-gd-4zz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LwY-ph-MuN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7AJ-fR-dtA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4ad-sh-dXj" secondAttribute="bottom" constant="50" id="BWa-KE-4Vz"/>
+                            <constraint firstItem="4ad-sh-dXj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gxb-1M-RLO"/>
+                            <constraint firstItem="LwY-ph-MuN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="NSF-cL-Sca"/>
+                            <constraint firstItem="4ad-sh-dXj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R7u-Ho-dxi"/>
+                            <constraint firstItem="4ad-sh-dXj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="fG9-KH-QO8"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="4ad-sh-dXj" secondAttribute="width" constant="100" id="gF7-9q-7aS"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Room Finder" id="gZ7-02-nfr"/>
+                    <connections>
+                        <outlet property="findRoomsButton" destination="4ad-sh-dXj" id="J5r-8K-cNu"/>
+                        <outlet property="loadingView" destination="LwY-ph-MuN" id="JNe-4o-Xqk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1087" y="429"/>
+        </scene>
+        <!--Available rooms-->
+        <scene sceneID="tnl-EI-pJB">
+            <objects>
+                <tableViewController title="Available rooms" id="tgx-ya-eKa" customClass="RoomListViewController" customModule="FindMeARoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kPF-1V-J3A">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dN3-Pn-FdS">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dN3-Pn-FdS" id="s3U-kb-nEr">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tgx-ya-eKa" id="EhR-Ta-G3t"/>
+                            <outlet property="delegate" destination="tgx-ya-eKa" id="8qL-OL-2D9"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcI-ky-sk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1858" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uVa-92-fvs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0MM-f1-czT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VWT-Mm-lOO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rst-t3-0jB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uwu-eP-sls" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="256" y="429"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="push_button.png" width="400" height="400"/>
+    </resources>
 </document>

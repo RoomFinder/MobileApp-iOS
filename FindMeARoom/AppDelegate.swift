@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  FindMeARoom
-//
-//  Created by Pavel Samarkin on 10/27/15.
-//  Copyright © 2015 Pavel Samarkin. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
