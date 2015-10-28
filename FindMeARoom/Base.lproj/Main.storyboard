@@ -18,6 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwY-ph-MuN">
+                                <rect key="frame" x="215" y="72" width="169" height="20"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5P3-WU-8PZ">
+                                        <rect key="frame" x="8" y="0.0" width="20" height="20"/>
+                                        <animations/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authentication..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-M0-x9c">
+                                        <rect key="frame" x="36" y="0.0" width="125" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="5P3-WU-8PZ" firstAttribute="centerY" secondItem="LwY-ph-MuN" secondAttribute="centerY" id="EOW-gS-z0r"/>
+                                    <constraint firstItem="tCJ-M0-x9c" firstAttribute="centerY" secondItem="5P3-WU-8PZ" secondAttribute="centerY" id="Jnv-0U-IxG"/>
+                                    <constraint firstItem="tCJ-M0-x9c" firstAttribute="leading" secondItem="5P3-WU-8PZ" secondAttribute="trailing" constant="8" id="Tyq-iN-G0t"/>
+                                    <constraint firstItem="5P3-WU-8PZ" firstAttribute="leading" secondItem="LwY-ph-MuN" secondAttribute="leading" constant="8" id="mIy-PB-EI6"/>
+                                    <constraint firstItem="5P3-WU-8PZ" firstAttribute="height" secondItem="LwY-ph-MuN" secondAttribute="height" id="xyp-Jj-8RR"/>
+                                    <constraint firstAttribute="trailing" secondItem="tCJ-M0-x9c" secondAttribute="trailing" constant="8" id="zeP-gd-4zz"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ad-sh-dXj">
                                 <rect key="frame" x="73" y="100" width="454" height="400"/>
                                 <animations/>
@@ -39,35 +68,6 @@
                                     <segue destination="tgx-ya-eKa" kind="show" id="hso-EH-tde"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwY-ph-MuN">
-                                <rect key="frame" x="240" y="72" width="119" height="20"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5P3-WU-8PZ">
-                                        <rect key="frame" x="8" y="0.0" width="20" height="20"/>
-                                        <animations/>
-                                    </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-M0-x9c">
-                                        <rect key="frame" x="36" y="0.0" width="75" height="20.5"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact">
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="5P3-WU-8PZ" firstAttribute="centerY" secondItem="LwY-ph-MuN" secondAttribute="centerY" id="EOW-gS-z0r"/>
-                                    <constraint firstItem="tCJ-M0-x9c" firstAttribute="centerY" secondItem="5P3-WU-8PZ" secondAttribute="centerY" id="Jnv-0U-IxG"/>
-                                    <constraint firstItem="tCJ-M0-x9c" firstAttribute="leading" secondItem="5P3-WU-8PZ" secondAttribute="trailing" constant="8" id="Tyq-iN-G0t"/>
-                                    <constraint firstItem="5P3-WU-8PZ" firstAttribute="leading" secondItem="LwY-ph-MuN" secondAttribute="leading" constant="8" id="mIy-PB-EI6"/>
-                                    <constraint firstItem="5P3-WU-8PZ" firstAttribute="height" secondItem="LwY-ph-MuN" secondAttribute="height" id="xyp-Jj-8RR"/>
-                                    <constraint firstAttribute="trailing" secondItem="tCJ-M0-x9c" secondAttribute="trailing" constant="8" id="zeP-gd-4zz"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

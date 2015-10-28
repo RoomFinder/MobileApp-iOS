@@ -14,7 +14,9 @@
 		A6F6DDD01BDFCF100002309A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F6DDCE1BDFCF100002309A /* LaunchScreen.storyboard */; };
 		A6F6DDD81BDFCF250002309A /* push_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F6DDD71BDFCF250002309A /* push_button.png */; };
 		A6F6DDDA1BDFDBDF0002309A /* RoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDD91BDFDBDF0002309A /* RoomListViewController.swift */; };
-		A6F6DDDD1BE03DAD0002309A /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDDC1BE03DAD0002309A /* MainService.swift */; };
+		A6F6DDDD1BE03DAD0002309A /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDDC1BE03DAD0002309A /* RestService.swift */; };
+		A6F6DDDF1BE0404D0002309A /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A6F6DDDE1BE0404D0002309A /* Settings.bundle */; };
+		A6F6DDE11BE042750002309A /* SmartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDE01BE042750002309A /* SmartService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,9 @@
 		A6F6DDD11BDFCF100002309A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6F6DDD71BDFCF250002309A /* push_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = push_button.png; sourceTree = "<group>"; };
 		A6F6DDD91BDFDBDF0002309A /* RoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
-		A6F6DDDC1BE03DAD0002309A /* MainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
+		A6F6DDDC1BE03DAD0002309A /* RestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
+		A6F6DDDE1BE0404D0002309A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A6F6DDE01BE042750002309A /* SmartService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 				A6F6DDCC1BDFCF100002309A /* Assets.xcassets */,
 				A6F6DDCE1BDFCF100002309A /* LaunchScreen.storyboard */,
 				A6F6DDD11BDFCF100002309A /* Info.plist */,
+				A6F6DDDE1BE0404D0002309A /* Settings.bundle */,
 			);
 			path = FindMeARoom;
 			sourceTree = "<group>";
@@ -76,7 +81,8 @@
 		A6F6DDDB1BE03D980002309A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				A6F6DDDC1BE03DAD0002309A /* MainService.swift */,
+				A6F6DDDC1BE03DAD0002309A /* RestService.swift */,
+				A6F6DDE01BE042750002309A /* SmartService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -142,6 +148,7 @@
 			files = (
 				A6F6DDD01BDFCF100002309A /* LaunchScreen.storyboard in Resources */,
 				A6F6DDD81BDFCF250002309A /* push_button.png in Resources */,
+				A6F6DDDF1BE0404D0002309A /* Settings.bundle in Resources */,
 				A6F6DDCD1BDFCF100002309A /* Assets.xcassets in Resources */,
 				A6F6DDCB1BDFCF100002309A /* Main.storyboard in Resources */,
 			);
@@ -156,7 +163,8 @@
 			files = (
 				A6F6DDC81BDFCF100002309A /* ViewController.swift in Sources */,
 				A6F6DDDA1BDFDBDF0002309A /* RoomListViewController.swift in Sources */,
-				A6F6DDDD1BE03DAD0002309A /* MainService.swift in Sources */,
+				A6F6DDE11BE042750002309A /* SmartService.swift in Sources */,
+				A6F6DDDD1BE03DAD0002309A /* RestService.swift in Sources */,
 				A6F6DDC61BDFCF100002309A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
