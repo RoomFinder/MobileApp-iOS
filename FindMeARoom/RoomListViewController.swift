@@ -62,12 +62,24 @@ class RoomListViewController: UITableViewController {
         return rooms?.count ?? 1
     }
 
+    private lazy var calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let rooms = rooms {
             let room = rooms[indexPath.row]
             var facts = ["\(room.building) \(room.floor)"]
-            if room.availableFrom.compare(NSDate()) == .OrderedDescending {
-                facts.append("available soon")
+            let now = NSDate()
+            let components = calendar?.components(NSCalendarUnit.Month, fromDate: now, toDate: room.availableFrom, options: NSCalendarOptions(rawValue: 0))
+            if let c = components {
+                if c.minute > 100500 || c.minute == 0 {
+                    //facts.append("available now")
+                }
+                else if c.minute > 120 {
+                    facts.append("available in \(c.minute/60) hours")
+                }
+                else {
+                    facts.append("available in \(c.minute) minutes")
+                }
             }
             if room.availableFor > 8*60 {
                 //facts.append("free for the day")

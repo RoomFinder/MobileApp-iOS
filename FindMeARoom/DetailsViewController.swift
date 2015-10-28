@@ -120,7 +120,7 @@ class DetailsViewController: UITableViewController, UIPickerViewDataSource, UIPi
                 }
             case .SomeError(let info):
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.showMessage("Unable to reserve: \(info)", withTitle: "Error", popViewControllerWhenDone: true)
+                    self.showMessage("Unable to reserve: \(info != nil ? info! : "")", withTitle: "Error", popViewControllerWhenDone: true)
                 }
             }
         }
