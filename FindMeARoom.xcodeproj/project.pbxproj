@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A687D4681BE0A34800FAEF8F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A687D4671BE0A34800FAEF8F /* DetailsViewController.swift */; };
 		A6F6DDC61BDFCF100002309A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDC51BDFCF100002309A /* AppDelegate.swift */; };
 		A6F6DDC81BDFCF100002309A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDC71BDFCF100002309A /* ViewController.swift */; };
 		A6F6DDCB1BDFCF100002309A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F6DDC91BDFCF100002309A /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A687D4671BE0A34800FAEF8F /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A6F6DDC21BDFCF0F0002309A /* FindMeARoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeARoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F6DDC51BDFCF100002309A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6F6DDC71BDFCF100002309A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				A6F6DDC51BDFCF100002309A /* AppDelegate.swift */,
 				A6F6DDC71BDFCF100002309A /* ViewController.swift */,
 				A6F6DDD91BDFDBDF0002309A /* RoomListViewController.swift */,
+				A687D4671BE0A34800FAEF8F /* DetailsViewController.swift */,
 				A6F6DDC91BDFCF100002309A /* Main.storyboard */,
 				A6F6DDCC1BDFCF100002309A /* Assets.xcassets */,
 				A6F6DDCE1BDFCF100002309A /* LaunchScreen.storyboard */,
@@ -168,6 +171,7 @@
 				A6F6DDDA1BDFDBDF0002309A /* RoomListViewController.swift in Sources */,
 				A6F6DDE31BE07E4B0002309A /* Room.swift in Sources */,
 				A6F6DDE11BE042750002309A /* SmartService.swift in Sources */,
+				A687D4681BE0A34800FAEF8F /* DetailsViewController.swift in Sources */,
 				A6F6DDDD1BE03DAD0002309A /* RestService.swift in Sources */,
 				A6F6DDC61BDFCF100002309A /* AppDelegate.swift in Sources */,
 			);
@@ -317,6 +321,7 @@
 				A6F6DDD61BDFCF100002309A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -2,6 +2,7 @@ import UIKit
 
 private let roomCell = "roomCell"
 private let loadingCell = "loadingCell"
+private let segueBook = "segueBook"
 
 class RoomListViewController: UITableViewController {
 
@@ -23,8 +24,12 @@ class RoomListViewController: UITableViewController {
         refreshList()
     }
 
+    var selectedRoom: Room?
+
     func refreshList() {
-        rooms = nil
+        guard rooms == nil else {
+            return
+        }
         SmartService.sharedService.getRooms(lat: latitude, lon: longitude) {
             switch($0)
             {
@@ -67,4 +72,18 @@ class RoomListViewController: UITableViewController {
             return tableView.dequeueReusableCellWithIdentifier(loadingCell)!
         }
     }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let rooms = rooms {
+            selectedRoom = rooms[indexPath.row]
+            performSegueWithIdentifier(segueBook, sender: self)
+        }
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == segueBook, let vc = segue.destinationViewController as? DetailsViewController {
+            vc.room = selectedRoom
+        }
+    }
+
 }
