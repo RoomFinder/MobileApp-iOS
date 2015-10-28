@@ -81,11 +81,18 @@
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="4ad-sh-dXj" secondAttribute="width" constant="100" id="gF7-9q-7aS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Room Finder" id="gZ7-02-nfr"/>
+                    <navigationItem key="navigationItem" title="Room Finder" id="gZ7-02-nfr">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" systemItem="refresh" id="SfA-IN-Eq7">
+                            <connections>
+                                <action selector="refreshClick:" destination="BYZ-38-t0r" id="s8m-7l-7T4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="findRoomsButton" destination="4ad-sh-dXj" id="J5r-8K-cNu"/>
                         <outlet property="loadingLabel" destination="tCJ-M0-x9c" id="Sok-86-QeI"/>
                         <outlet property="loadingView" destination="LwY-ph-MuN" id="JNe-4o-Xqk"/>
+                        <outlet property="refreshButton" destination="SfA-IN-Eq7" id="Wj6-92-dfM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

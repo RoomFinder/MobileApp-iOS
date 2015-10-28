@@ -9,6 +9,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var loadingView: UIView!
     @IBOutlet var loadingLabel: UILabel!
 
+    @IBOutlet var refreshButton: UIBarButtonItem!
 
     private var manager: CLLocationManager!
     private var locationObtained: Bool = false
@@ -23,7 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         // TODO: CLLocationManager.authorizationStatus() == .Denied
         manager.delegate = self
-        manager.startUpdatingLocation()
+        obtainLocation()
     }
 
     var location: CLLocation?
@@ -47,9 +48,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         refreshStatus()
     }
 
+    @IBAction func refreshClick(sender: AnyObject) {
+        guard offlineMode else {
+            return
+        }
+        offlineMode = false
+        if !loggedIn {
+            logIn()
+        }
+        if !locationObtained {
+            obtainLocation()
+        }
+    }
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         logIn()
+    }
+
+    func obtainLocation() {
+        manager.startUpdatingLocation()
     }
 
     func logIn() {
@@ -99,9 +117,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     func refreshStatus() {
         if offlineMode {
+            refreshButton.enabled = true
             loadingView.hidden = true
+            return
         }
-        else if loggedIn {
+        else {
+            refreshButton.enabled = false
+        }
+        if loggedIn {
             if locationObtained {
                 loadingView.hidden = true
                 findRoomsButton.enabled = true

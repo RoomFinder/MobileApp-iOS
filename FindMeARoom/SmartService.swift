@@ -37,7 +37,8 @@ class SmartService {
             let username = defaults.stringForKey(UsernamePreference),
             let password = defaults.stringForKey(PasswordPreference),
             let site = defaults.stringForKey(SitePreference),
-            let email = defaults.stringForKey(EmailPreference) else {
+            let email = defaults.stringForKey(EmailPreference)
+        where !username.isEmpty && !password.isEmpty && !site.isEmpty && !email.isEmpty else {
                 callback(.InvalidSettings)
                 return
         }
