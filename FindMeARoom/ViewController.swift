@@ -1,9 +1,51 @@
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+private let segueRooms = "segueRooms"
+
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var findRoomsButton: UIButton!
     @IBOutlet var loadingView: UIView!
+    @IBOutlet var loadingLabel: UILabel!
+
+
+    private var manager: CLLocationManager!
+    private var locationObtained: Bool = false
+    private var offlineMode: Bool = false
+    private var loggedIn: Bool = false
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        manager = CLLocationManager()
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            manager.requestWhenInUseAuthorization()
+        }
+        // TODO: CLLocationManager.authorizationStatus() == .Denied
+        manager.delegate = self
+        manager.startUpdatingLocation()
+    }
+
+    var location: CLLocation?
+
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[locations.count-1]
+        if location.horizontalAccuracy < kCLLocationAccuracyHundredMeters {
+            manager.stopUpdatingLocation()
+            print("Location obtained: \(location)")
+            self.location = location
+            locationObtained = true
+            refreshStatus()
+        }
+    }
+
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Cannot obtain location: \(error)")
+        location = nil
+        locationObtained = false
+        offlineMode = true
+        refreshStatus()
+    }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -14,22 +56,23 @@ class ViewController: UIViewController {
         guard !SmartService.sharedService.isTicketValid else {
             return
         }
-        self.loadingView.hidden = false
-        self.findRoomsButton.enabled = false
+        self.loggedIn = false
+        self.offlineMode = false
+        self.refreshStatus()
         SmartService.sharedService.login {
             switch($0) {
             case .Success:
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.hideMessage()
-                    self.findRoomsButton.enabled = true
+                    self.loggedIn = true
+                    self.refreshStatus()
                 }
             case .InvalidSettings:
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.hideMessage()
+                    self.offlineMode = true
+                    self.refreshStatus()
                     let alert = UIAlertController(title: "Error", message: "Please check your setings", preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "Settings", style: .Default) { _ in
                         UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
-                        self.dismissViewControllerAnimated(false, completion: nil)
                         })
                     alert.addAction(UIAlertAction(title: "Offline mode", style: .Cancel) { _ in
                         self.dismissViewControllerAnimated(true, completion: nil)
@@ -38,7 +81,8 @@ class ViewController: UIViewController {
                 }
             case .SomeError(let info):
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.hideMessage()
+                    self.offlineMode = true
+                    self.refreshStatus()
                     let alert = UIAlertController(title: "Error", message: "Authentication error" + (info != nil ? ": \(info!)" : ""), preferredStyle: .Alert)
                     alert.addAction(UIAlertAction(title: "Retry", style: .Default) { _ in
                         self.dismissViewControllerAnimated(false, completion: nil)
@@ -53,14 +97,37 @@ class ViewController: UIViewController {
         }
     }
 
-    func hideMessage() {
-        self.loadingView.hidden = true
+    func refreshStatus() {
+        if offlineMode {
+            loadingView.hidden = true
+        }
+        else if loggedIn {
+            if locationObtained {
+                loadingView.hidden = true
+                findRoomsButton.enabled = true
+            }
+            else { // !locationObtained
+                loadingLabel.text = "Obtaining location..."
+                loadingView.hidden = false
+            }
+        }
+        else { // !loggedIn
+            if locationObtained {
+                loadingLabel.text = "Authenticating..."
+                loadingView.hidden = false
+            }
+            else { // !locationObtained
+                loadingLabel.text = "Loading..."
+                loadingView.hidden = false
+            }//
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == segueRooms, let vc = segue.destinationViewController as? RoomListViewController {
+            vc.latitude = location?.coordinate.latitude
+            vc.longitude = location?.coordinate.longitude
+        }
     }
-
 }
 

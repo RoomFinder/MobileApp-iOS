@@ -67,9 +67,13 @@ class RestService {
         }.resume()
     }
 
-    func getRooms(ticket ticket: String, callback: RestResults<[Room]> -> Void) {
+    func getRooms(lat lat: Double?, lon: Double?, ticket: String, callback: RestResults<[Room]> -> Void) {
         // TODO: is there a simpler way?
-        NSURLSession.sharedSession().dataTaskWithURL(getUrl("rooms?ticket=\(ticket)")) {
+        var url = "rooms?ticket=\(ticket)"
+        if let lat = lat, let lon = lon {
+            url += "&lat=\(lat)&lon=\(lon)"
+        }
+        NSURLSession.sharedSession().dataTaskWithURL(getUrl(url)) {
             if let error = $2 {
                 print("Error: \(error)")
                 callback(.NetworkError)

@@ -11,6 +11,13 @@ class RoomListViewController: UITableViewController {
         }
     }
 
+    var latitude: Double?
+    var longitude: Double?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         refreshList()
@@ -18,7 +25,7 @@ class RoomListViewController: UITableViewController {
 
     func refreshList() {
         rooms = nil
-        SmartService.sharedService.getRooms {
+        SmartService.sharedService.getRooms(lat: latitude, lon: longitude) {
             switch($0)
             {
             case .Success(let rooms):

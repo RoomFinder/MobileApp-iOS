@@ -57,14 +57,14 @@ class SmartService {
         }
     }
 
-    func getRooms(callback: GetRoomsResults -> Void) {
+    func getRooms(lat lat: Double?, lon: Double?, callback: GetRoomsResults -> Void) {
         guard let ticket = ticket else {
             // TODO: attempt relogin
             callback(.SomeError(info: nil))
             return
         }
         let service = RestService()
-        service.getRooms(ticket: ticket) {
+        service.getRooms(lat: lat, lon: lon, ticket: ticket) {
             switch($0) {
             case .Success(let rooms):
                 callback(.Success(rooms))

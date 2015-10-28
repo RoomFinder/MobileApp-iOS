@@ -41,5 +41,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Room Finder needs to know your location to find better rooms for you</string>
 </dict>
 </plist>

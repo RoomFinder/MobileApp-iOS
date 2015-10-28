@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwY-ph-MuN">
-                                <rect key="frame" x="215" y="72" width="169" height="20"/>
+                                <rect key="frame" x="240" y="72" width="119" height="20"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5P3-WU-8PZ">
                                         <rect key="frame" x="8" y="0.0" width="20" height="20"/>
                                         <animations/>
                                     </activityIndicatorView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authentication..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-M0-x9c">
-                                        <rect key="frame" x="36" y="0.0" width="125" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCJ-M0-x9c">
+                                        <rect key="frame" x="36" y="0.0" width="75" height="20.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -65,7 +65,7 @@
                                     <rect key="frame" x="-7.5" y="41" width="815" height="718"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="tgx-ya-eKa" kind="show" id="hso-EH-tde"/>
+                                    <segue destination="tgx-ya-eKa" kind="show" identifier="segueRooms" id="hso-EH-tde"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,6 +84,7 @@
                     <navigationItem key="navigationItem" title="Room Finder" id="gZ7-02-nfr"/>
                     <connections>
                         <outlet property="findRoomsButton" destination="4ad-sh-dXj" id="J5r-8K-cNu"/>
+                        <outlet property="loadingLabel" destination="tCJ-M0-x9c" id="Sok-86-QeI"/>
                         <outlet property="loadingView" destination="LwY-ph-MuN" id="JNe-4o-Xqk"/>
                     </connections>
                 </viewController>
