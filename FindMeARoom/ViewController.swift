@@ -22,9 +22,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             manager.requestWhenInUseAuthorization()
         }
-        // TODO: CLLocationManager.authorizationStatus() == .Denied
         manager.delegate = self
-        obtainLocation()
     }
 
     var location: CLLocation?
@@ -32,7 +30,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count-1]
         if location.horizontalAccuracy < kCLLocationAccuracyHundredMeters {
-            manager.stopUpdatingLocation()
             print("Location obtained: \(location)")
             self.location = location
             locationObtained = true
@@ -56,21 +53,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if !loggedIn {
             logIn()
         }
-        if !locationObtained {
-            obtainLocation()
-        }
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        if CLLocationManager.authorizationStatus() == .Denied {
+            reportInvalidSettings("Unable to access your location")
+        }
         logIn()
-    }
-
-    func obtainLocation() {
         manager.startUpdatingLocation()
     }
 
-    // TODO: simplify this method
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        manager.stopUpdatingLocation()
+    }
+
     func logIn() {
         guard !SmartService.sharedService.isTicketValid else {
             return
@@ -87,37 +85,46 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
             case .InvalidSettings:
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.offlineMode = true
-                    self.refreshStatus()
-                    let alert = UIAlertController(title: "Error", message: "Please check your setings", preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "Settings", style: .Default) { _ in
-                        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
-                        })
-                    alert.addAction(UIAlertAction(title: "Offline mode", style: .Cancel) { _ in
-                        self.dismissViewControllerAnimated(true, completion: nil)
-                        })
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.reportInvalidSettings("Login failed")
                 }
             case .SomeError(let info):
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.offlineMode = true
-                    self.refreshStatus()
-                    let alert = UIAlertController(title: "Error", message: "Authentication error" + (info != nil ? ": \(info!)" : ""), preferredStyle: .Alert)
-                    alert.addAction(UIAlertAction(title: "Retry", style: .Default) { _ in
-                        self.dismissViewControllerAnimated(false, completion: nil)
-                        self.logIn()
-                        })
-                    alert.addAction(UIAlertAction(title: "Offline mode", style: .Cancel) { _ in
-                        self.dismissViewControllerAnimated(true, completion: nil)
-                        })
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.reportAuthenticationError(info)
                 }
             }
         }
     }
 
+    func reportInvalidSettings(info: String?) {
+        self.offlineMode = true
+        self.refreshStatus()
+        let alert = UIAlertController(title: "Error", message: (info != nil ? "\(info!). " : "") + "Please check your setings", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Settings", style: .Default) { _ in
+            UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+        })
+        alert.addAction(UIAlertAction(title: "Offline mode", style: .Cancel) { _ in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+
+    func reportAuthenticationError(info: String?) {
+        self.offlineMode = true
+        self.refreshStatus()
+        let alert = UIAlertController(title: "Error", message: "Authentication error" + (info != nil ? ": \(info!)" : ""), preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Retry", style: .Default) { _ in
+            self.dismissViewControllerAnimated(false, completion: nil)
+            self.logIn()
+            })
+        alert.addAction(UIAlertAction(title: "Offline mode", style: .Cancel) { _ in
+            self.dismissViewControllerAnimated(true, completion: nil)
+            })
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+
     func refreshStatus() {
         if offlineMode {
+            findRoomsButton.enabled = false
             refreshButton.enabled = true
             loadingView.hidden = true
             return
@@ -133,17 +140,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             else { // !locationObtained
                 loadingLabel.text = "Obtaining location..."
                 loadingView.hidden = false
+                findRoomsButton.enabled = false
             }
         }
         else { // !loggedIn
             if locationObtained {
                 loadingLabel.text = "Authenticating..."
                 loadingView.hidden = false
+                findRoomsButton.enabled = false
             }
             else { // !locationObtained
                 loadingLabel.text = "Loading..."
                 loadingView.hidden = false
-            }//
+                findRoomsButton.enabled = false
+            }
         }
     }
 
