@@ -3,31 +3,37 @@
     {
       "idiom" : "iphone",
       "size" : "29x29",
+      "filename" : "push_button-58px.png",
       "scale" : "2x"
     },
     {
       "idiom" : "iphone",
       "size" : "29x29",
+      "filename" : "push_button-87px.png",
       "scale" : "3x"
     },
     {
       "idiom" : "iphone",
       "size" : "40x40",
+      "filename" : "push_button-80px.png",
       "scale" : "2x"
     },
     {
       "idiom" : "iphone",
       "size" : "40x40",
+      "filename" : "push_button-120px.png",
       "scale" : "3x"
     },
     {
       "idiom" : "iphone",
       "size" : "60x60",
+      "filename" : "push_button-120px.png",
       "scale" : "2x"
     },
     {
       "idiom" : "iphone",
       "size" : "60x60",
+      "filename" : "push_button-180px.png",
       "scale" : "3x"
     }
   ],
