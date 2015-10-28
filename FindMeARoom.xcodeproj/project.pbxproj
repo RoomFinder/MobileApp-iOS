@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A687D4681BE0A34800FAEF8F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A687D4671BE0A34800FAEF8F /* DetailsViewController.swift */; };
 		A687D46A1BE0C5F700FAEF8F /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A687D4691BE0C5F700FAEF8F /* Converter.swift */; };
+		A687D46C1BE1723500FAEF8F /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A687D46B1BE1723500FAEF8F /* REST.swift */; };
 		A6F6DDC61BDFCF100002309A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDC51BDFCF100002309A /* AppDelegate.swift */; };
 		A6F6DDC81BDFCF100002309A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDC71BDFCF100002309A /* ViewController.swift */; };
 		A6F6DDCB1BDFCF100002309A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F6DDC91BDFCF100002309A /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		A687D4671BE0A34800FAEF8F /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A687D4691BE0C5F700FAEF8F /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		A687D46B1BE1723500FAEF8F /* REST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
 		A6F6DDC21BDFCF0F0002309A /* FindMeARoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeARoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F6DDC51BDFCF100002309A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6F6DDC71BDFCF100002309A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				A6F6DDE01BE042750002309A /* SmartService.swift */,
 				A6F6DDE21BE07E4B0002309A /* Room.swift */,
 				A687D4691BE0C5F700FAEF8F /* Converter.swift */,
+				A687D46B1BE1723500FAEF8F /* REST.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				A6F6DDDA1BDFDBDF0002309A /* RoomListViewController.swift in Sources */,
 				A687D46A1BE0C5F700FAEF8F /* Converter.swift in Sources */,
 				A6F6DDE31BE07E4B0002309A /* Room.swift in Sources */,
+				A687D46C1BE1723500FAEF8F /* REST.swift in Sources */,
 				A6F6DDE11BE042750002309A /* SmartService.swift in Sources */,
 				A687D4681BE0A34800FAEF8F /* DetailsViewController.swift in Sources */,
 				A6F6DDDD1BE03DAD0002309A /* RestService.swift in Sources */,
