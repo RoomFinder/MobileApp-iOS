@@ -100,7 +100,7 @@ class RestService {
                 callback(.NetworkError)
                 return
             }
-            let r = try? array.map(self.readRoom)
+            let r = try? array.map(Converter.readRoom)
             guard let result = r else {
                 print("Unable to parse contents of the array")
                 callback(.NetworkError)
@@ -154,16 +154,4 @@ class RestService {
         }.resume()
     }
 
-    private func readRoom(obj: AnyObject?) throws -> Room {
-        guard
-            let dict = obj as? NSDictionary,
-            let id = dict.valueForKey("id") as? String,
-            let name = dict.valueForKey("name") as? String,
-            let availableFrom = dict.valueForKey("availableFrom") as? String,
-            let availableFor = dict.valueForKey("availableForMinutes") as? Int else {
-                // TODO: better error
-                throw NSError(domain: "", code: 0, userInfo: nil)
-        }
-        return Room(id: id, name: name, availableFrom: availableFrom, availableFor: availableFor)
-    }
 }

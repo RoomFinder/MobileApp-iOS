@@ -64,9 +64,23 @@ class RoomListViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let rooms = rooms {
+            let room = rooms[indexPath.row]
+            var facts = ["\(room.building) \(room.floor)"]
+            if room.availableFrom.compare(NSDate()) == .OrderedDescending {
+                facts.append("available soon")
+            }
+            if room.availableFor > 8*60 {
+                //facts.append("free for the day")
+            }
+            else if room.availableFor > 2*60 {
+                facts.append("free for \(room.availableFor/60) hours")
+            }
+            else {
+                facts.append("free for \(room.availableFor) minutes")
+            }
             let cell = tableView.dequeueReusableCellWithIdentifier(roomCell)!
-            cell.textLabel!.text = rooms[indexPath.row].name;
-            cell.detailTextLabel!.text = rooms[indexPath.row].availableFrom;
+            cell.textLabel!.text = room.name
+            cell.detailTextLabel!.text = facts.joinWithSeparator(", ")
             return cell
         }
         else {
