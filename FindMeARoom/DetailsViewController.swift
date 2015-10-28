@@ -28,7 +28,8 @@ class DetailsViewController: UITableViewController, UIPickerViewDataSource, UIPi
 
     var room: Room? {
         didSet {
-            self.navigationItem.title = room?.name
+            // refresh title
+            tableView.reloadData()
         }
     }
 
@@ -37,6 +38,13 @@ class DetailsViewController: UITableViewController, UIPickerViewDataSource, UIPi
         let selectedRow = 1
         pickerView.selectRow(selectedRow, inComponent: 0, animated: true)
         pickerView(pickerView, didSelectRow: selectedRow, inComponent: 0)
+    }
+
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0, let room = room {
+            return room.name
+        }
+        return super.tableView(tableView, titleForHeaderInSection: section)
     }
 
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
