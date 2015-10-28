@@ -47,7 +47,7 @@
                                     <constraint firstAttribute="trailing" secondItem="tCJ-M0-x9c" secondAttribute="trailing" constant="8" id="zeP-gd-4zz"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ad-sh-dXj">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ad-sh-dXj">
                                 <rect key="frame" x="73" y="100" width="454" height="400"/>
                                 <animations/>
                                 <constraints>
