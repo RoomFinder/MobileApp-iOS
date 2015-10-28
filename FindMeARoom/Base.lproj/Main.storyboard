@@ -239,7 +239,7 @@
                         <outlet property="pickLengthCell" destination="vzT-n6-oXP" id="7rf-PP-FdQ"/>
                         <outlet property="pickerView" destination="WH0-qE-sgd" id="pJD-01-t0q"/>
                         <outlet property="reserveButtonCell" destination="yYb-8T-hnz" id="odY-YO-iaC"/>
-                        <outlet property="someHighlightedLabel" destination="z2W-TJ-dIN" id="YwS-Ff-EVQ"/>
+                        <outlet property="reserveButtonLabel" destination="z2W-TJ-dIN" id="jsH-Sh-6RD"/>
                         <outlet property="someRegularLabel" destination="ZO8-79-1F2" id="ZXm-bU-RpT"/>
                     </connections>
                 </tableViewController>

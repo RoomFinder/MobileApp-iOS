@@ -26,6 +26,7 @@ class RoomListViewController: UITableViewController {
 
     var selectedRoom: Room?
 
+    // TODO: simplify this method
     func refreshList() {
         guard rooms == nil else {
             return

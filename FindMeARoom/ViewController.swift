@@ -70,6 +70,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         manager.startUpdatingLocation()
     }
 
+    // TODO: simplify this method
     func logIn() {
         guard !SmartService.sharedService.isTicketValid else {
             return

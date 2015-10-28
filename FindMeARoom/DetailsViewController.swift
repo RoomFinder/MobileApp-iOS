@@ -8,7 +8,7 @@ class DetailsViewController: UITableViewController, UIPickerViewDataSource, UIPi
     @IBOutlet var desiredLengthLabel: UILabel!
     @IBOutlet var reserveButtonCell: UITableViewCell!
 
-    @IBOutlet var someHighlightedLabel: UILabel!
+    @IBOutlet var reserveButtonLabel: UILabel!
     @IBOutlet var someRegularLabel: UILabel!
 
     @IBOutlet var pickerView: UIPickerView!
@@ -16,7 +16,7 @@ class DetailsViewController: UITableViewController, UIPickerViewDataSource, UIPi
     var showPicker: Bool = false {
         didSet {
             if showPicker && !oldValue {
-                desiredLengthLabel.textColor = someHighlightedLabel.textColor
+                desiredLengthLabel.textColor = reserveButtonLabel.textColor
                 tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Fade)
             }
             else if !showPicker && oldValue {
@@ -30,6 +30,19 @@ class DetailsViewController: UITableViewController, UIPickerViewDataSource, UIPi
         didSet {
             // refresh title
             tableView.reloadData()
+        }
+    }
+
+    private var reservationInProgress: Bool = false {
+        didSet {
+            if reservationInProgress {
+                reserveButtonCell.selectionStyle = .None
+                reserveButtonLabel.enabled = false
+            }
+            else {
+                reserveButtonCell.selectionStyle = .Default
+                reserveButtonLabel.enabled = true
+            }
         }
     }
 
@@ -78,10 +91,49 @@ class DetailsViewController: UITableViewController, UIPickerViewDataSource, UIPi
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if tableView.cellForRowAtIndexPath(indexPath) == pickLengthCell {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        if cell == pickLengthCell {
             showPicker = !showPicker
+        }
+        else if cell == reserveButtonCell && !reservationInProgress, let room = room {
+            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+            alert.addAction(UIAlertAction(title: "Reserve", style: .Destructive) { _ in
+                self.reserveRoom(room)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { _ in
+                self.dismissViewControllerAnimated(true, completion: nil)
+            })
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
+    func reserveRoom(room: Room) {
+        reservationInProgress = true
+        tableView.reloadData()
+        SmartService.sharedService.reserveRoom(id: room.id, duration: timeSpans[self.pickerView.selectedRowInComponent(0)]) {
+            switch($0) {
+            case .Success:
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.showMessage("Reservation confirmed for \(room.name)", withTitle: "Success", popViewControllerWhenDone: true)
+                }
+            case .SomeError(let info):
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.showMessage("Unable to reserve: \(info)", withTitle: "Error", popViewControllerWhenDone: true)
+                }
+            }
+        }
+    }
+
+    func showMessage(message: String, withTitle title: String, popViewControllerWhenDone: Bool) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default) { _ in
+            self.dismissViewControllerAnimated(true, completion: nil)
+            if popViewControllerWhenDone {
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+        })
+        presentViewController(alert, animated: true, completion: nil)
+    }
 }

@@ -18,6 +18,11 @@ enum GetRoomsResults {
     case SomeError(info: String?)
 }
 
+enum ReserveResults {
+    case Success
+    case SomeError(info: String?)
+}
+
 /// Wrapper around MainService, aware of UIKit and ticket expiration
 class SmartService {
     static let sharedService = SmartService()
@@ -69,6 +74,32 @@ class SmartService {
             switch($0) {
             case .Success(let rooms):
                 callback(.Success(rooms))
+            case .NetworkError:
+                callback(.SomeError(info: nil))
+            case .ServerError(let info):
+                callback(.SomeError(info: info))
+            case .Unauthorized:
+                callback(.SomeError(info: "Authorization error"))
+            }
+        }
+    }
+
+    func reserveRoom(id id: String, duration: Int, callback: ReserveResults -> Void) {
+        guard let ticket = ticket else {
+            // TODO: attempt relogin
+            callback(.SomeError(info: nil))
+            return
+        }
+        let service = RestService()
+        service.reserveRoom(id: id, duration: duration, ticket: ticket) {
+            switch($0) {
+            case .Success(let ok):
+                if ok {
+                    callback(.Success)
+                }
+                else {
+                    callback(.SomeError(info: "Declined"))
+                }
             case .NetworkError:
                 callback(.SomeError(info: nil))
             case .ServerError(let info):

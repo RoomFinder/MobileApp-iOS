@@ -110,15 +110,60 @@ class RestService {
         }.resume()
     }
 
+    func reserveRoom(id id: String, duration: Int, ticket: String, callback: RestResults<Bool> -> Void) {
+        // TODO: is there a simpler way?
+        let request = NSMutableURLRequest(URL: getUrl("rooms/\(id)?ticket=\(ticket)"))
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.HTTPMethod = "POST"
+
+        let tmp: [NSObject: AnyObject] = [
+            "duration" : duration
+        ]
+        let obj = NSDictionary(dictionary: tmp)
+        guard let data = try? NSJSONSerialization.dataWithJSONObject(obj, options: NSJSONWritingOptions(rawValue: 0)) else {
+            callback(.NetworkError)
+            return
+        }
+        NSURLSession.sharedSession().uploadTaskWithRequest(request, fromData: data) {
+            if let error = $2 {
+                print("Error: \(error)")
+                callback(.NetworkError)
+                return
+            }
+            guard let data = $0, let response = $1 as? NSHTTPURLResponse else {
+                print("Empty response")
+                callback(.NetworkError)
+                return
+            }
+            if response.statusCode == 401 {
+                print("Status code: \(response.statusCode)")
+                callback(.Unauthorized)
+                return
+            }
+            if response.statusCode == 409 {
+                print("Status code: \(response.statusCode)")
+                callback(.Success(data: false))
+                return
+            }
+            if response.statusCode != 200 {
+                print("Status code: \(response.statusCode)")
+                callback(.ServerError(info: NSString(data: data, encoding: NSASCIIStringEncoding) as String?))
+                return
+            }
+            callback(.Success(data: true))
+        }.resume()
+    }
+
     private func readRoom(obj: AnyObject?) throws -> Room {
         guard
             let dict = obj as? NSDictionary,
+            let id = dict.valueForKey("id") as? String,
             let name = dict.valueForKey("name") as? String,
             let availableFrom = dict.valueForKey("availableFrom") as? String,
             let availableFor = dict.valueForKey("availableForMinutes") as? Int else {
                 // TODO: better error
                 throw NSError(domain: "", code: 0, userInfo: nil)
         }
-        return Room(name: name, availableFrom: availableFrom, availableFor: availableFor)
+        return Room(id: id, name: name, availableFrom: availableFrom, availableFor: availableFor)
     }
 }
