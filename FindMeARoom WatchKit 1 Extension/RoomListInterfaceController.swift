@@ -10,6 +10,7 @@ class RoomListInterfaceController: WKInterfaceController {
     private var rooms: [Room]!
 
     override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         let location = context as! CLLocation
         errorLabel.setText("Loading...\nPlease be patient, it will take some time.")
         SmartService.sharedService.getRooms(lat: location.coordinate.latitude, lon: location.coordinate.longitude) {
@@ -28,7 +29,7 @@ class RoomListInterfaceController: WKInterfaceController {
                 }
             case .SomeError(let info):
                 dispatch_async(dispatch_get_main_queue()) {
-                    self.errorLabel.setText(info)
+                    self.errorLabel.setText(info ?? "Error")
                 }
             }
         }

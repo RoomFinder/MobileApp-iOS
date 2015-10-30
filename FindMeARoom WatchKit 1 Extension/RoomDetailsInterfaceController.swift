@@ -1,12 +1,17 @@
 import WatchKit
 
+private let reserveRoomSegue = "reserveRoom"
+
 class RoomDetailsInterfaceController: WKInterfaceController {
     @IBOutlet var roomNameLabel: WKInterfaceLabel!
     @IBOutlet var availableForLabel: WKInterfaceLabel!
     @IBOutlet var locationLabel: WKInterfaceLabel!
 
+    private var room: Room!
+
     override func awakeWithContext(context: AnyObject?) {
-        let room = (context as! ObjectiveCBox<Room>).value
+        super.awakeWithContext(context)
+        room = (context as! ObjectiveCBox<Room>).value
         roomNameLabel.setText(room.name)
         locationLabel.setText("\(room.building) \(room.floor)")
         let availableFor: String
@@ -22,6 +27,14 @@ class RoomDetailsInterfaceController: WKInterfaceController {
         availableForLabel.setText(availableFor)
     }
 
-    @IBAction func reserveTap() {
+
+    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
+        if segueIdentifier == reserveRoomSegue {
+            return ObjectiveCBox(value: room!)
+        }
+        else {
+            return super.contextForSegueWithIdentifier(segueIdentifier)
+        }
     }
+
 }

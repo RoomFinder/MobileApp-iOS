@@ -26,6 +26,8 @@
 		A6A8EE301BE3DCDB00C0DE27 /* RoomRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8EE2F1BE3DCDB00C0DE27 /* RoomRowController.swift */; };
 		A6A8EE321BE3E88C00C0DE27 /* RoomDetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8EE311BE3E88C00C0DE27 /* RoomDetailsInterfaceController.swift */; };
 		A6A8EE341BE3EAEA00C0DE27 /* ObjectiveCBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8EE331BE3EAEA00C0DE27 /* ObjectiveCBox.swift */; };
+		A6AC7E871BE41D57002596FA /* ReserveRoomInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AC7E861BE41D57002596FA /* ReserveRoomInterfaceController.swift */; };
+		A6B45E221BE428FB00A54D8E /* ConfirmReservationInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B45E211BE428FB00A54D8E /* ConfirmReservationInterfaceController.swift */; };
 		A6F6DDC61BDFCF100002309A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDC51BDFCF100002309A /* AppDelegate.swift */; };
 		A6F6DDC81BDFCF100002309A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDC71BDFCF100002309A /* ViewController.swift */; };
 		A6F6DDCB1BDFCF100002309A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F6DDC91BDFCF100002309A /* Main.storyboard */; };
@@ -88,6 +90,8 @@
 		A6A8EE2F1BE3DCDB00C0DE27 /* RoomRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomRowController.swift; sourceTree = "<group>"; };
 		A6A8EE311BE3E88C00C0DE27 /* RoomDetailsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomDetailsInterfaceController.swift; sourceTree = "<group>"; };
 		A6A8EE331BE3EAEA00C0DE27 /* ObjectiveCBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectiveCBox.swift; sourceTree = "<group>"; };
+		A6AC7E861BE41D57002596FA /* ReserveRoomInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReserveRoomInterfaceController.swift; sourceTree = "<group>"; };
+		A6B45E211BE428FB00A54D8E /* ConfirmReservationInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmReservationInterfaceController.swift; sourceTree = "<group>"; };
 		A6F6DDC21BDFCF0F0002309A /* FindMeARoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeARoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F6DDC51BDFCF100002309A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6F6DDC71BDFCF100002309A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				A6A8EE2D1BE3DB9E00C0DE27 /* RoomListInterfaceController.swift */,
 				A6A8EE2F1BE3DCDB00C0DE27 /* RoomRowController.swift */,
 				A6A8EE311BE3E88C00C0DE27 /* RoomDetailsInterfaceController.swift */,
+				A6AC7E861BE41D57002596FA /* ReserveRoomInterfaceController.swift */,
+				A6B45E211BE428FB00A54D8E /* ConfirmReservationInterfaceController.swift */,
 				A6A8EE331BE3EAEA00C0DE27 /* ObjectiveCBox.swift */,
 				A67120DF1BE2E74700B004CF /* Assets.xcassets */,
 				A67120E11BE2E74700B004CF /* Info.plist */,
@@ -354,8 +360,10 @@
 				A67120DE1BE2E74700B004CF /* InterfaceController.swift in Sources */,
 				A6A8EE281BE2E80E00C0DE27 /* Room.swift in Sources */,
 				A6A8EE261BE2E80E00C0DE27 /* RestService.swift in Sources */,
+				A6AC7E871BE41D57002596FA /* ReserveRoomInterfaceController.swift in Sources */,
 				A6A8EE291BE2E80E00C0DE27 /* Converter.swift in Sources */,
 				A6A8EE341BE3EAEA00C0DE27 /* ObjectiveCBox.swift in Sources */,
+				A6B45E221BE428FB00A54D8E /* ConfirmReservationInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

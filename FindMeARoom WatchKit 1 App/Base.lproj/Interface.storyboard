@@ -24,10 +24,10 @@
                 </controller>
             </objects>
         </scene>
-        <!--roomListController-->
+        <!--Room List Interface Controller-->
         <scene sceneID="mGE-UW-w9g">
             <objects>
-                <controller identifier="roomListController" id="cjM-49-ZsQ" customClass="RoomListInterfaceController" customModule="FindMeARoom_WatchKit_1_Extension">
+                <controller id="cjM-49-ZsQ" customClass="RoomListInterfaceController" customModule="FindMeARoom_WatchKit_1_Extension">
                     <items>
                         <label alignment="left" text="Error message" numberOfLines="8" id="zJk-Zw-KEA"/>
                         <table alignment="left" id="dA4-o1-RIW">
@@ -37,7 +37,7 @@
                                         <items>
                                             <label alignment="left" text="Room # 1" numberOfLines="3" id="Ith-pH-Put"/>
                                             <label alignment="left" text="Building 1 Lower" id="llu-zW-3Lx">
-                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                                             </label>
                                         </items>
@@ -68,15 +68,15 @@
                     <items>
                         <label width="1" alignment="left" text="Room name" numberOfLines="5" id="xOn-Wl-mCB"/>
                         <label alignment="left" text="Location" numberOfLines="3" id="u3P-mt-rG3">
-                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
                         <separator alignment="left" id="2pp-gF-orS"/>
                         <label alignment="left" text="Available for:" id="lIm-TV-5p2"/>
                         <label alignment="left" text="30 min" id="rJ3-kl-dmd"/>
-                        <button width="1" alignment="left" hidden="YES" title="Reserve" id="gVP-E1-Qdk">
+                        <button width="1" alignment="left" title="Reserve" id="gVP-E1-Qdk">
                             <connections>
-                                <action selector="reserveTap" destination="XMz-IB-HCu" id="DRX-vs-v3C"/>
+                                <segue destination="dek-ee-eq8" kind="push" identifier="reserveRoom" id="2gt-UK-yZ1"/>
                             </connections>
                         </button>
                     </items>
@@ -88,6 +88,63 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="550" y="1052"/>
+        </scene>
+        <!--Reserve Room Interface Controller-->
+        <scene sceneID="gtb-bJ-LIA">
+            <objects>
+                <controller id="dek-ee-eq8" customClass="ReserveRoomInterfaceController" customModule="FindMeARoom_WatchKit_1_Extension">
+                    <items>
+                        <table alignment="left" id="GCx-IV-sN2">
+                            <items>
+                                <tableRow identifier="reservationChoiceRow" id="3Au-pC-4Z8" customClass="ReservationChoiceController" customModule="FindMeARoom_WatchKit_1_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Ynm-vG-Ep3">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Label" id="lti-ty-rfn">
+                                                <fontDescription key="font" type="system" pointSize="15"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="lti-ty-rfn" id="RXN-bI-ecT"/>
+                                        <segue destination="1Vf-8P-rOg" kind="modal" identifier="reservationConfirmed" id="3Fp-aa-vpu"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="cancelRow" id="Bbu-jU-1NK">
+                                    <group key="rootItem" width="1" alignment="left" id="5Gj-vE-uPI">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Cancel" id="7UP-BN-4NZ"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="GCx-IV-sN2" id="INH-Ik-GUh"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="824" y="1052"/>
+        </scene>
+        <!--Confirm Reservation Interface Controller-->
+        <scene sceneID="0uS-x0-VnQ">
+            <objects>
+                <controller id="1Vf-8P-rOg" customClass="ConfirmReservationInterfaceController" customModule="FindMeARoom_WatchKit_1_Extension">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Reserving... Please wait." textAlignment="center" numberOfLines="2" id="Re5-wE-KXa"/>
+                        <button width="1" alignment="center" verticalAlignment="center" hidden="YES" title="OK" id="hGi-AC-SC0">
+                            <connections>
+                                <action selector="dismissTap" destination="1Vf-8P-rOg" id="M4W-jf-lGW"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="label" destination="Re5-wE-KXa" id="VYk-dW-Qdr"/>
+                        <outlet property="okButton" destination="hGi-AC-SC0" id="BBN-JS-0xj"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="824" y="1425"/>
         </scene>
     </scenes>
 </document>
