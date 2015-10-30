@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FindMeARoom_WatchKit_1_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Error message" numberOfLines="8" id="WvH-qu-qwc"/>
+                        <button width="1" alignment="left" title="Find a room" backgroundImage="push_button.png" id="6jA-S9-Pxd">
+                            <connections>
+                                <segue destination="cjM-49-ZsQ" kind="push" identifier="showRoomList" id="HG8-Dm-PGC"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="errorLabel" destination="WvH-qu-qwc" id="YkB-VS-GqE"/>
+                        <outlet property="findButton" destination="6jA-S9-Pxd" id="NJY-Sk-xla"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+        <!--roomListController-->
+        <scene sceneID="mGE-UW-w9g">
+            <objects>
+                <controller identifier="roomListController" id="cjM-49-ZsQ" customClass="RoomListInterfaceController" customModule="FindMeARoom_WatchKit_1_Extension">
+                    <items>
+                        <label alignment="left" text="Error message" numberOfLines="8" id="zJk-Zw-KEA"/>
+                        <table alignment="left" id="dA4-o1-RIW">
+                            <items>
+                                <tableRow identifier="roomRow" id="5gG-9O-evO" customClass="RoomRowController" customModule="FindMeARoom_WatchKit_1_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="mfe-QV-rL5">
+                                        <items>
+                                            <label alignment="left" text="Room # 1" numberOfLines="3" id="Ith-pH-Put"/>
+                                            <label alignment="left" text="Building 1 Lower" id="llu-zW-3Lx">
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                        <connections>
+                                            <segue destination="XMz-IB-HCu" kind="push" identifier="showRoomDetails" id="JMO-66-Q3H"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="roomInfoLabel" destination="llu-zW-3Lx" id="UuI-3I-JOL"/>
+                                        <outlet property="roomNameLabel" destination="Ith-pH-Put" id="Dz4-Qd-UU6"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="errorLabel" destination="zJk-Zw-KEA" id="gQk-Ct-Ue2"/>
+                        <outlet property="table" destination="dA4-o1-RIW" id="hyf-e9-jzy"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="295" y="1052"/>
+        </scene>
+        <!--Room Details Interface Controller-->
+        <scene sceneID="pun-Dd-ji1">
+            <objects>
+                <controller id="XMz-IB-HCu" customClass="RoomDetailsInterfaceController" customModule="FindMeARoom_WatchKit_1_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Room name" numberOfLines="5" id="xOn-Wl-mCB"/>
+                        <label alignment="left" text="Location" numberOfLines="3" id="u3P-mt-rG3">
+                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <separator alignment="left" id="2pp-gF-orS"/>
+                        <label alignment="left" text="Available for:" id="lIm-TV-5p2"/>
+                        <label alignment="left" text="30 min" id="rJ3-kl-dmd"/>
+                        <button width="1" alignment="left" hidden="YES" title="Reserve" id="gVP-E1-Qdk">
+                            <connections>
+                                <action selector="reserveTap" destination="XMz-IB-HCu" id="DRX-vs-v3C"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="availableForLabel" destination="rJ3-kl-dmd" id="lsF-2K-jyq"/>
+                        <outlet property="locationLabel" destination="u3P-mt-rG3" id="mBq-9e-8v4"/>
+                        <outlet property="roomNameLabel" destination="xOn-Wl-mCB" id="ZqC-wi-acg"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="550" y="1052"/>
+        </scene>
+    </scenes>
+</document>

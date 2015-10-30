@@ -7,9 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A67120DE1BE2E74700B004CF /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67120DD1BE2E74700B004CF /* InterfaceController.swift */; };
+		A67120E01BE2E74700B004CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67120DF1BE2E74700B004CF /* Assets.xcassets */; };
+		A67120E51BE2E74700B004CF /* FindMeARoom WatchKit 1 App.app in Resources */ = {isa = PBXBuildFile; fileRef = A67120E41BE2E74700B004CF /* FindMeARoom WatchKit 1 App.app */; };
+		A67120EB1BE2E74700B004CF /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67120E91BE2E74700B004CF /* Interface.storyboard */; };
+		A67120ED1BE2E74700B004CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67120EC1BE2E74700B004CF /* Assets.xcassets */; };
+		A67120F11BE2E74700B004CF /* FindMeARoom WatchKit 1 Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A67120DB1BE2E74700B004CF /* FindMeARoom WatchKit 1 Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A687D4681BE0A34800FAEF8F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A687D4671BE0A34800FAEF8F /* DetailsViewController.swift */; };
 		A687D46A1BE0C5F700FAEF8F /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A687D4691BE0C5F700FAEF8F /* Converter.swift */; };
 		A687D46C1BE1723500FAEF8F /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A687D46B1BE1723500FAEF8F /* REST.swift */; };
+		A6A8EE261BE2E80E00C0DE27 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDDC1BE03DAD0002309A /* RestService.swift */; };
+		A6A8EE271BE2E80E00C0DE27 /* SmartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDE01BE042750002309A /* SmartService.swift */; };
+		A6A8EE281BE2E80E00C0DE27 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDE21BE07E4B0002309A /* Room.swift */; };
+		A6A8EE291BE2E80E00C0DE27 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A687D4691BE0C5F700FAEF8F /* Converter.swift */; };
+		A6A8EE2A1BE2E80E00C0DE27 /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A687D46B1BE1723500FAEF8F /* REST.swift */; };
+		A6A8EE2C1BE3CC7500C0DE27 /* push_button.png in Resources */ = {isa = PBXBuildFile; fileRef = A6F6DDD71BDFCF250002309A /* push_button.png */; };
+		A6A8EE2E1BE3DB9E00C0DE27 /* RoomListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8EE2D1BE3DB9E00C0DE27 /* RoomListInterfaceController.swift */; };
+		A6A8EE301BE3DCDB00C0DE27 /* RoomRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8EE2F1BE3DCDB00C0DE27 /* RoomRowController.swift */; };
+		A6A8EE321BE3E88C00C0DE27 /* RoomDetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8EE311BE3E88C00C0DE27 /* RoomDetailsInterfaceController.swift */; };
+		A6A8EE341BE3EAEA00C0DE27 /* ObjectiveCBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8EE331BE3EAEA00C0DE27 /* ObjectiveCBox.swift */; };
 		A6F6DDC61BDFCF100002309A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDC51BDFCF100002309A /* AppDelegate.swift */; };
 		A6F6DDC81BDFCF100002309A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDC71BDFCF100002309A /* ViewController.swift */; };
 		A6F6DDCB1BDFCF100002309A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6F6DDC91BDFCF100002309A /* Main.storyboard */; };
@@ -23,10 +39,55 @@
 		A6F6DDE31BE07E4B0002309A /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F6DDE21BE07E4B0002309A /* Room.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A67120E61BE2E74700B004CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6F6DDBA1BDFCF0F0002309A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A67120E31BE2E74700B004CF;
+			remoteInfo = "FindMeARoom WatchKit 1 App";
+		};
+		A67120EF1BE2E74700B004CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6F6DDBA1BDFCF0F0002309A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A67120DA1BE2E74700B004CF;
+			remoteInfo = "FindMeARoom WatchKit 1 Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A67120F81BE2E74700B004CF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A67120F11BE2E74700B004CF /* FindMeARoom WatchKit 1 Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A67120D61BE2E1C000B004CF /* FindMeARoom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FindMeARoom.entitlements; sourceTree = "<group>"; };
+		A67120DB1BE2E74700B004CF /* FindMeARoom WatchKit 1 Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "FindMeARoom WatchKit 1 Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67120DD1BE2E74700B004CF /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		A67120DF1BE2E74700B004CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A67120E11BE2E74700B004CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A67120E41BE2E74700B004CF /* FindMeARoom WatchKit 1 App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FindMeARoom WatchKit 1 App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67120EA1BE2E74700B004CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		A67120EC1BE2E74700B004CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A67120EE1BE2E74700B004CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A687D4671BE0A34800FAEF8F /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		A687D4691BE0C5F700FAEF8F /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		A687D46B1BE1723500FAEF8F /* REST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
+		A6A8EE2B1BE2F1A100C0DE27 /* FindMeARoom WatchKit 1 Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FindMeARoom WatchKit 1 Extension.entitlements"; sourceTree = "<group>"; };
+		A6A8EE2D1BE3DB9E00C0DE27 /* RoomListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListInterfaceController.swift; sourceTree = "<group>"; };
+		A6A8EE2F1BE3DCDB00C0DE27 /* RoomRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomRowController.swift; sourceTree = "<group>"; };
+		A6A8EE311BE3E88C00C0DE27 /* RoomDetailsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomDetailsInterfaceController.swift; sourceTree = "<group>"; };
+		A6A8EE331BE3EAEA00C0DE27 /* ObjectiveCBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectiveCBox.swift; sourceTree = "<group>"; };
 		A6F6DDC21BDFCF0F0002309A /* FindMeARoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeARoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F6DDC51BDFCF100002309A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6F6DDC71BDFCF100002309A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,7 +95,7 @@
 		A6F6DDCC1BDFCF100002309A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6F6DDCF1BDFCF100002309A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6F6DDD11BDFCF100002309A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6F6DDD71BDFCF250002309A /* push_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = push_button.png; sourceTree = "<group>"; };
+		A6F6DDD71BDFCF250002309A /* push_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = push_button.png; path = FindMeARoom/push_button.png; sourceTree = "<group>"; };
 		A6F6DDD91BDFDBDF0002309A /* RoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListViewController.swift; sourceTree = "<group>"; };
 		A6F6DDDC1BE03DAD0002309A /* RestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
 		A6F6DDDE1BE0404D0002309A /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -43,6 +104,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A67120D81BE2E74700B004CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6F6DDBF1BDFCF0F0002309A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,10 +121,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A67120DC1BE2E74700B004CF /* FindMeARoom WatchKit 1 Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A6A8EE2B1BE2F1A100C0DE27 /* FindMeARoom WatchKit 1 Extension.entitlements */,
+				A67120DD1BE2E74700B004CF /* InterfaceController.swift */,
+				A6A8EE2D1BE3DB9E00C0DE27 /* RoomListInterfaceController.swift */,
+				A6A8EE2F1BE3DCDB00C0DE27 /* RoomRowController.swift */,
+				A6A8EE311BE3E88C00C0DE27 /* RoomDetailsInterfaceController.swift */,
+				A6A8EE331BE3EAEA00C0DE27 /* ObjectiveCBox.swift */,
+				A67120DF1BE2E74700B004CF /* Assets.xcassets */,
+				A67120E11BE2E74700B004CF /* Info.plist */,
+			);
+			path = "FindMeARoom WatchKit 1 Extension";
+			sourceTree = "<group>";
+		};
+		A67120E81BE2E74700B004CF /* FindMeARoom WatchKit 1 App */ = {
+			isa = PBXGroup;
+			children = (
+				A67120E91BE2E74700B004CF /* Interface.storyboard */,
+				A67120EC1BE2E74700B004CF /* Assets.xcassets */,
+				A67120EE1BE2E74700B004CF /* Info.plist */,
+			);
+			path = "FindMeARoom WatchKit 1 App";
+			sourceTree = "<group>";
+		};
 		A6F6DDB91BDFCF0F0002309A = {
 			isa = PBXGroup;
 			children = (
+				A6F6DDDB1BE03D980002309A /* Service */,
 				A6F6DDC41BDFCF100002309A /* FindMeARoom */,
+				A6F6DDD71BDFCF250002309A /* push_button.png */,
+				A67120DC1BE2E74700B004CF /* FindMeARoom WatchKit 1 Extension */,
+				A67120E81BE2E74700B004CF /* FindMeARoom WatchKit 1 App */,
 				A6F6DDC31BDFCF0F0002309A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				A6F6DDC21BDFCF0F0002309A /* FindMeARoom.app */,
+				A67120DB1BE2E74700B004CF /* FindMeARoom WatchKit 1 Extension.appex */,
+				A67120E41BE2E74700B004CF /* FindMeARoom WatchKit 1 App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,8 +171,7 @@
 		A6F6DDC41BDFCF100002309A /* FindMeARoom */ = {
 			isa = PBXGroup;
 			children = (
-				A6F6DDDB1BE03D980002309A /* Service */,
-				A6F6DDD71BDFCF250002309A /* push_button.png */,
+				A67120D61BE2E1C000B004CF /* FindMeARoom.entitlements */,
 				A6F6DDC51BDFCF100002309A /* AppDelegate.swift */,
 				A6F6DDC71BDFCF100002309A /* ViewController.swift */,
 				A6F6DDD91BDFDBDF0002309A /* RoomListViewController.swift */,
@@ -97,11 +195,45 @@
 				A687D46B1BE1723500FAEF8F /* REST.swift */,
 			);
 			name = Service;
+			path = FindMeARoom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A67120DA1BE2E74700B004CF /* FindMeARoom WatchKit 1 Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A67120F51BE2E74700B004CF /* Build configuration list for PBXNativeTarget "FindMeARoom WatchKit 1 Extension" */;
+			buildPhases = (
+				A67120D71BE2E74700B004CF /* Sources */,
+				A67120D81BE2E74700B004CF /* Frameworks */,
+				A67120D91BE2E74700B004CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A67120E71BE2E74700B004CF /* PBXTargetDependency */,
+			);
+			name = "FindMeARoom WatchKit 1 Extension";
+			productName = "FindMeARoom WatchKit 1 Extension";
+			productReference = A67120DB1BE2E74700B004CF /* FindMeARoom WatchKit 1 Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		A67120E31BE2E74700B004CF /* FindMeARoom WatchKit 1 App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A67120F21BE2E74700B004CF /* Build configuration list for PBXNativeTarget "FindMeARoom WatchKit 1 App" */;
+			buildPhases = (
+				A67120E21BE2E74700B004CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FindMeARoom WatchKit 1 App";
+			productName = "FindMeARoom WatchKit 1 App";
+			productReference = A67120E41BE2E74700B004CF /* FindMeARoom WatchKit 1 App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		A6F6DDC11BDFCF0F0002309A /* FindMeARoom */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6F6DDD41BDFCF100002309A /* Build configuration list for PBXNativeTarget "FindMeARoom" */;
@@ -109,10 +241,12 @@
 				A6F6DDBE1BDFCF0F0002309A /* Sources */,
 				A6F6DDBF1BDFCF0F0002309A /* Frameworks */,
 				A6F6DDC01BDFCF0F0002309A /* Resources */,
+				A67120F81BE2E74700B004CF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A67120F01BE2E74700B004CF /* PBXTargetDependency */,
 			);
 			name = FindMeARoom;
 			productName = FindMeARoom;
@@ -129,9 +263,27 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Pavel Samarkin";
 				TargetAttributes = {
+					A67120DA1BE2E74700B004CF = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = V8M8BJ4NS7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					A67120E31BE2E74700B004CF = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = V8M8BJ4NS7;
+					};
 					A6F6DDC11BDFCF0F0002309A = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = V8M8BJ4NS7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -149,11 +301,32 @@
 			projectRoot = "";
 			targets = (
 				A6F6DDC11BDFCF0F0002309A /* FindMeARoom */,
+				A67120DA1BE2E74700B004CF /* FindMeARoom WatchKit 1 Extension */,
+				A67120E31BE2E74700B004CF /* FindMeARoom WatchKit 1 App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A67120D91BE2E74700B004CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67120E01BE2E74700B004CF /* Assets.xcassets in Resources */,
+				A67120E51BE2E74700B004CF /* FindMeARoom WatchKit 1 App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A67120E21BE2E74700B004CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67120ED1BE2E74700B004CF /* Assets.xcassets in Resources */,
+				A67120EB1BE2E74700B004CF /* Interface.storyboard in Resources */,
+				A6A8EE2C1BE3CC7500C0DE27 /* push_button.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6F6DDC01BDFCF0F0002309A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,6 +342,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A67120D71BE2E74700B004CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6A8EE271BE2E80E00C0DE27 /* SmartService.swift in Sources */,
+				A6A8EE2A1BE2E80E00C0DE27 /* REST.swift in Sources */,
+				A6A8EE2E1BE3DB9E00C0DE27 /* RoomListInterfaceController.swift in Sources */,
+				A6A8EE301BE3DCDB00C0DE27 /* RoomRowController.swift in Sources */,
+				A6A8EE321BE3E88C00C0DE27 /* RoomDetailsInterfaceController.swift in Sources */,
+				A67120DE1BE2E74700B004CF /* InterfaceController.swift in Sources */,
+				A6A8EE281BE2E80E00C0DE27 /* Room.swift in Sources */,
+				A6A8EE261BE2E80E00C0DE27 /* RestService.swift in Sources */,
+				A6A8EE291BE2E80E00C0DE27 /* Converter.swift in Sources */,
+				A6A8EE341BE3EAEA00C0DE27 /* ObjectiveCBox.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A6F6DDBE1BDFCF0F0002309A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,7 +377,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A67120E71BE2E74700B004CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A67120E31BE2E74700B004CF /* FindMeARoom WatchKit 1 App */;
+			targetProxy = A67120E61BE2E74700B004CF /* PBXContainerItemProxy */;
+		};
+		A67120F01BE2E74700B004CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A67120DA1BE2E74700B004CF /* FindMeARoom WatchKit 1 Extension */;
+			targetProxy = A67120EF1BE2E74700B004CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		A67120E91BE2E74700B004CF /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A67120EA1BE2E74700B004CF /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		A6F6DDC91BDFCF100002309A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -207,6 +418,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A67120F31BE2E74700B004CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = FindMeARoom_WatchKit_1_Extension;
+				INFOPLIST_FILE = "FindMeARoom WatchKit 1 App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.FindMeARoom.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		A67120F41BE2E74700B004CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = FindMeARoom_WatchKit_1_Extension;
+				INFOPLIST_FILE = "FindMeARoom WatchKit 1 App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.FindMeARoom.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		A67120F61BE2E74700B004CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "FindMeARoom WatchKit 1 Extension/FindMeARoom WatchKit 1 Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "FindMeARoom WatchKit 1 Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.FindMeARoom.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A67120F71BE2E74700B004CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "FindMeARoom WatchKit 1 Extension/FindMeARoom WatchKit 1 Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "FindMeARoom WatchKit 1 Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.FindMeARoom.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		A6F6DDD21BDFCF100002309A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -292,6 +563,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FindMeARoom/FindMeARoom.entitlements;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = FindMeARoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.FindMeARoom;
@@ -303,6 +576,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FindMeARoom/FindMeARoom.entitlements;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = FindMeARoom/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.samarkin.FindMeARoom;
@@ -313,6 +588,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A67120F21BE2E74700B004CF /* Build configuration list for PBXNativeTarget "FindMeARoom WatchKit 1 App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A67120F31BE2E74700B004CF /* Debug */,
+				A67120F41BE2E74700B004CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A67120F51BE2E74700B004CF /* Build configuration list for PBXNativeTarget "FindMeARoom WatchKit 1 Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A67120F61BE2E74700B004CF /* Debug */,
+				A67120F71BE2E74700B004CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A6F6DDBD1BDFCF0F0002309A /* Build configuration list for PBXProject "FindMeARoom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FindMeARoom WatchKit 1 App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>FindMeARoom.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A67120E31BE2E74700B004CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A6F6DDC11BDFCF0F0002309A</key>
 		<dict>
 			<key>primary</key>

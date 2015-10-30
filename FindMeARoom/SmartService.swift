@@ -1,5 +1,7 @@
 import UIKit
 
+private let AppGroupName = "group.net.samarkin.findmearoom"
+
 private let UsernamePreference = "username_preference"
 private let PasswordPreference = "password_preference"
 private let EmailPreference = "email_preference"
@@ -37,8 +39,8 @@ class SmartService {
     }
 
     func login(callback: LoginResults -> Void) {
-        let defaults = NSUserDefaults.standardUserDefaults()
         guard
+            let defaults = NSUserDefaults(suiteName: AppGroupName),
             let username = defaults.stringForKey(UsernamePreference),
             let password = defaults.stringForKey(PasswordPreference),
             let site = defaults.stringForKey(SitePreference),
